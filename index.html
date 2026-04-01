@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAS.ai Test Assignment — Multi-Step Registration Form</title>
+    <meta
+      name="description"
+      content="Responsive three-step registration form built with semantic HTML, Tailwind CSS, and vanilla JavaScript."
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body class="app-body">
+    <header class="page-header">
+      <div class="page-shell">
+        <p class="eyebrow">CAS.ai</p>
+        <h1 class="page-title">Multi-Step Registration Form</h1>
+        <p class="page-description">
+          Junior Frontend Developer test assignment built with semantic HTML, local Tailwind CSS build,
+          and vanilla JavaScript.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-shell page-shell--form" aria-labelledby="registration-form-title">
+        <div class="registration-card">
+          <ol class="stepper" aria-label="Form steps">
+            <li class="stepper__item stepper__item--active" data-step-indicator="1">
+              <span class="stepper__circle">1</span>
+              <span class="stepper__line" aria-hidden="true"></span>
+            </li>
+            <li class="stepper__item" data-step-indicator="2">
+              <span class="stepper__circle">2</span>
+              <span class="stepper__line" aria-hidden="true"></span>
+            </li>
+            <li class="stepper__item" data-step-indicator="3">
+              <span class="stepper__circle">3</span>
+            </li>
+          </ol>
+
+          <form class="form-card" id="registrationForm" novalidate>
+            <h2 class="sr-only" id="registration-form-title">Registration form</h2>
+
+            <section class="form-panel" data-step-panel="1" aria-labelledby="step-title-1">
+              <div class="form-panel__header">
+                <h3 class="form-panel__title" id="step-title-1">Personal info</h3>
+                <p class="form-panel__subtitle">Step 1 of 3</p>
+              </div>
+
+              <div class="form-grid form-grid--two-columns">
+                <div class="field">
+                  <label class="form-label" for="firstName">First name <span>*</span></label>
+                  <input
+                    class="form-input"
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    placeholder="John"
+                    data-required="true"
+                    data-label="First name"
+                    autocomplete="given-name"
+                  />
+                  <p class="form-error" data-error-for="firstName"></p>
+                </div>
+
+                <div class="field">
+                  <label class="form-label" for="lastName">Last name <span>*</span></label>
+                  <input
+                    class="form-input"
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    placeholder="Doe"
+                    data-required="true"
+                    data-label="Last name"
+                    autocomplete="family-name"
+                  />
+                  <p class="form-error" data-error-for="lastName"></p>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label class="form-label" for="email">Email <span>*</span></label>
+                  <input
+                    class="form-input"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    data-required="true"
+                    data-validate="email"
+                    data-label="Email"
+                    autocomplete="email"
+                  />
+                  <p class="form-error" data-error-for="email"></p>
+                </div>
+
+                <div class="field">
+                  <label class="form-label" for="phone">Phone <span>*</span></label>
+                  <input
+                    class="form-input"
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+380 (XX) XXX-XX-XX"
+                    data-required="true"
+                    data-validate="phone"
+                    data-label="Phone"
+                    autocomplete="tel"
+                    inputmode="tel"
+                  />
+                  <p class="form-error" data-error-for="phone"></p>
+                </div>
+
+                <div class="field">
+                  <label class="form-label" for="dateOfBirth">Date of birth <span>*</span></label>
+                  <input
+                    class="form-input"
+                    id="dateOfBirth"
+                    name="dateOfBirth"
+                    type="date"
+                    data-required="true"
+                    data-label="Date of birth"
+                    autocomplete="bday"
+                  />
+                  <p class="form-error" data-error-for="dateOfBirth"></p>
+                </div>
+              </div>
+
+              <div class="form-actions form-actions--end">
+                <button class="button button--primary" type="button" data-action="next">Next →</button>
+              </div>
+            </section>
+
+            <section class="form-panel hidden" data-step-panel="2" aria-labelledby="step-title-2">
+              <div class="form-panel__header">
+                <h3 class="form-panel__title" id="step-title-2">Address</h3>
+                <p class="form-panel__subtitle">Step 2 of 3</p>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label class="form-label" for="country">Country <span>*</span></label>
+                  <select
+                    class="form-input form-select"
+                    id="country"
+                    name="country"
+                    data-required="true"
+                    data-label="Country"
+                    autocomplete="country-name"
+                  >
+                    <option value="">Select country...</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Germany">Germany</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                  </select>
+                  <p class="form-error" data-error-for="country"></p>
+                </div>
+
+                <div class="field">
+                  <label class="form-label" for="city">City <span>*</span></label>
+                  <input
+                    class="form-input"
+                    id="city"
+                    name="city"
+                    type="text"
+                    placeholder="Odesa"
+                    data-required="true"
+                    data-label="City"
+                    autocomplete="address-level2"
+                  />
+                  <p class="form-error" data-error-for="city"></p>
+                </div>
+
+                <div class="field">
+                  <label class="form-label" for="streetAddress">Street address</label>
+                  <input
+                    class="form-input"
+                    id="streetAddress"
+                    name="streetAddress"
+                    type="text"
+                    placeholder="123 Main St, Apt 4"
+                    data-label="Street address"
+                    autocomplete="street-address"
+                  />
+                  <p class="form-error" data-error-for="streetAddress"></p>
+                </div>
+
+                <div class="field">
+                  <label class="form-label" for="postalCode">ZIP / Postal code</label>
+                  <input
+                    class="form-input"
+                    id="postalCode"
+                    name="postalCode"
+                    type="text"
+                    placeholder="65000"
+                    data-label="ZIP / Postal code"
+                    autocomplete="postal-code"
+                  />
+                  <p class="form-error" data-error-for="postalCode"></p>
+                </div>
+              </div>
+
+              <div class="form-actions form-actions--split">
+                <button class="button button--secondary" type="button" data-action="back">← Back</button>
+                <button class="button button--primary" type="button" data-action="next">Next →</button>
+              </div>
+            </section>
+
+            <section class="form-panel hidden" data-step-panel="3" aria-labelledby="step-title-3">
+              <div class="form-panel__header">
+                <h3 class="form-panel__title" id="step-title-3">Confirmation</h3>
+                <p class="form-panel__subtitle">Step 3 of 3</p>
+              </div>
+
+              <div class="form-grid">
+                <div class="field field--checkbox">
+                  <label class="checkbox-field" for="agreeTerms">
+                    <input
+                      class="checkbox-field__input"
+                      id="agreeTerms"
+                      name="agreeTerms"
+                      type="checkbox"
+                      data-required="true"
+                      data-label="Terms and Conditions"
+                    />
+                    <span class="checkbox-field__box" aria-hidden="true"></span>
+                    <span class="checkbox-field__text"
+                      >I agree to the <a class="inline-link" href="#">Terms and Conditions</a> <span>*</span></span
+                    >
+                  </label>
+                  <p class="form-error" data-error-for="agreeTerms"></p>
+                </div>
+
+                <div class="field field--checkbox">
+                  <label class="checkbox-field" for="subscribeToNewsletter">
+                    <input
+                      class="checkbox-field__input"
+                      id="subscribeToNewsletter"
+                      name="subscribeToNewsletter"
+                      type="checkbox"
+                    />
+                    <span class="checkbox-field__box" aria-hidden="true"></span>
+                    <span class="checkbox-field__text">Subscribe to newsletter</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-actions form-actions--split">
+                <button class="button button--secondary" type="button" data-action="back">← Back</button>
+                <button class="button button--success" type="submit">Submit ✓</button>
+              </div>
+            </section>
+          </form>
+
+          <div class="submit-state hidden" id="submitState" aria-live="polite">
+            <h2 class="submit-state__title">Form data logged to the console</h2>
+            <p class="submit-state__text">Open DevTools → Console to see the submitted JSON payload.</p>
+            <button class="button button--secondary" id="startOverButton" type="button">Start over</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script defer src="./assets/js/modules/form-state.js"></script>
+    <script defer src="./assets/js/modules/form-ui.js"></script>
+    <script defer src="./assets/js/modules/form-validation.js"></script>
+    <script defer src="./assets/js/app.js"></script>
+  </body>
+</html>
