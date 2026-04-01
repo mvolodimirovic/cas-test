@@ -1,0 +1,14 @@
+{
+  "name": "cas-ai-front-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-step registration form built with semantic HTML, local Tailwind CSS, and vanilla JavaScript.",
+  "scripts": {
+    "build": "node scripts/build-tailwind.js",
+    "serve": "node scripts/serve.js",
+    "start": "npm run build && npm run serve"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.10"
+  }
+}
