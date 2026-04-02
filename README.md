@@ -17,6 +17,10 @@ Add your deployment URL here after publishing to GitHub Pages.
 - Responsive layout for desktop and mobile
 - No CDN usage — all assets are local
 
+## Live demo url
+
+- https://mvolodimirovic.github.io/cas-test/
+
 ## Tech stack
 
 - HTML5
