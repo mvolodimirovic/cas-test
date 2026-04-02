@@ -16,6 +16,7 @@
   --color-surface-300: #d8d4c8;
   --color-text-700: #575d68;
   --color-text-900: #20242b;
+  --color-error-100: #fbe4e7;
   --color-error-500: #e35d6a;
 }
 
@@ -23,19 +24,40 @@
   body {
     @apply min-h-screen bg-[#f3f2ec] font-sans text-text-900 antialiased;
   }
+
   a {
     @apply transition-colors duration-200;
   }
+
   button {
     @apply cursor-pointer;
   }
+
   button:disabled {
     @apply cursor-not-allowed;
   }
+
+  select {
+    @apply cursor-pointer;
+  }
+
   input,
   button,
-  select {
+  select,
+  textarea {
     font: inherit;
+  }
+
+  fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  legend {
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -57,7 +79,7 @@
   }
 
   .eyebrow {
-    @apply text-sm font-semibold tracking-[0.18em] text-brand-600 uppercase;
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-brand-600;
   }
 
   .page-title {
@@ -160,7 +182,7 @@
   }
 
   .field.is-invalid .form-input {
-    @apply border-error-500 focus:ring-red-100;
+    @apply border-error-500 hover:border-error-500 focus:border-error-500 focus:ring-4 focus:ring-error-100;
   }
 
   .checkbox-field {
@@ -173,6 +195,10 @@
 
   .checkbox-field__box {
     @apply mt-0.5 flex h-5 w-5 shrink-0 rounded-[6px] border border-surface-300 bg-white transition-all duration-200;
+  }
+
+  .checkbox-field__input:focus-visible + .checkbox-field__box {
+    @apply border-brand-500 ring-4 ring-brand-100;
   }
 
   .checkbox-field__text {
@@ -205,7 +231,7 @@
   }
 
   .button {
-    @apply inline-flex min-h-12 items-center justify-center rounded-xl px-6 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-4;
+    @apply inline-flex min-h-12 items-center justify-center rounded-xl px-6 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-4 disabled:cursor-not-allowed;
   }
 
   .button--primary {
