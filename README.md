@@ -1,41 +1,24 @@
 # CAS.ai Test Assignment
 
-Responsive 3-step registration form built with semantic HTML5, Tailwind CSS, and vanilla JavaScript.
+## Brief Project Description
 
-## Live Demo
+This project is a responsive 3-step registration form built as a frontend test assignment for CAS.ai.
+
+It includes step navigation, client-side validation, inline error messages, and JSON output to the browser console after successful form submission.
+
+## Live Demo Link
 
 https://mvolodimirovic.github.io/cas-test/
 
-## Project Overview
-
-This project is a multi-step registration form created as a frontend test assignment for the Junior Frontend Developer position at CAS.ai.
-
-The implementation focuses on clean semantic markup, responsive layout, step-based navigation, client-side validation, and local asset management without using any CDN.
-
-## Requirements Covered
-
-- 3-step registration form
-- Step indicator (1 → 2 → 3)
-- Next / Back navigation
-- Only the active step is visible
-- Client-side validation before moving to the next step
-- Required field validation
-- Email format validation
-- Ukrainian phone number validation
-- Inline error messages under invalid fields
-- Form submission outputs structured JSON to `console.log()`
-- Responsive layout for desktop and mobile
-- No CDN usage — all assets are stored locally
-
-## Tech Stack
+## Tech Stack Used
 
 - HTML5
 - Tailwind CSS v4
 - Vanilla JavaScript
 - Tailwind CLI
-- GitHub Pages for deployment
+- GitHub Pages
 
-## Project Structure
+## Project structure
 
 ```text
 .
@@ -54,5 +37,42 @@ The implementation focuses on clean semantic markup, responsive layout, step-bas
 ├── .gitignore
 ├── index.html
 ├── package.json
-├── package-lock.json
 └── README.md
+```
+
+## How to Run Locally
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run Tailwind in watch mode:
+
+```bash
+npm run dev
+```
+
+3. Open `index.html` in the browser  
+   or use a local static server such as Live Server in VS Code.
+
+4. Build the final production CSS file:
+
+```bash
+npm run build
+```
+
+## Time Spent on the Task
+
+Approximately 6–8 hours.
+
+## IDE and Plugins/Extensions Used
+
+- Visual Studio Code
+- Prettier
+- Live Server
+
+## AI Tools Used
+
+- ChatGPT
