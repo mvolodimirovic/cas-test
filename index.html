@@ -38,13 +38,14 @@
               <span class="stepper__circle">3</span>
             </li>
           </ol>
-
           <form class="form-card" id="registrationForm" novalidate>
             <h2 class="sr-only" id="registration-form-title">Registration form</h2>
 
-            <section class="form-panel" data-step-panel="1" aria-labelledby="step-title-1">
+            <fieldset class="form-panel" data-step-panel="1">
+              <legend class="sr-only">Personal info</legend>
+
               <div class="form-panel__header">
-                <h3 class="form-panel__title" id="step-title-1">Personal info</h3>
+                <h3 class="form-panel__title">Personal info</h3>
                 <p class="form-panel__subtitle">Step 1 of 3</p>
               </div>
 
@@ -132,11 +133,13 @@
               <div class="form-actions form-actions--end">
                 <button class="button button--primary" type="button" data-action="next">Next →</button>
               </div>
-            </section>
+            </fieldset>
 
-            <section class="form-panel hidden" data-step-panel="2" aria-labelledby="step-title-2">
+            <fieldset class="form-panel hidden" data-step-panel="2">
+              <legend class="sr-only">Address</legend>
+
               <div class="form-panel__header">
-                <h3 class="form-panel__title" id="step-title-2">Address</h3>
+                <h3 class="form-panel__title">Address</h3>
                 <p class="form-panel__subtitle">Step 2 of 3</p>
               </div>
 
@@ -209,11 +212,13 @@
                 <button class="button button--secondary" type="button" data-action="back">← Back</button>
                 <button class="button button--primary" type="button" data-action="next">Next →</button>
               </div>
-            </section>
+            </fieldset>
 
-            <section class="form-panel hidden" data-step-panel="3" aria-labelledby="step-title-3">
+            <fieldset class="form-panel hidden" data-step-panel="3">
+              <legend class="sr-only">Confirmation</legend>
+
               <div class="form-panel__header">
-                <h3 class="form-panel__title" id="step-title-3">Confirmation</h3>
+                <h3 class="form-panel__title">Confirmation</h3>
                 <p class="form-panel__subtitle">Step 3 of 3</p>
               </div>
 
@@ -229,9 +234,9 @@
                       data-label="Terms and Conditions"
                     />
                     <span class="checkbox-field__box" aria-hidden="true"></span>
-                    <span class="checkbox-field__text"
-                      >I agree to the <a class="inline-link" href="#">Terms and Conditions</a> <span>*</span></span
-                    >
+                    <span class="checkbox-field__text">
+                      I agree to the <a class="inline-link" href="#">Terms and Conditions</a> <span>*</span>
+                    </span>
                   </label>
                   <p class="form-error" data-error-for="agreeTerms"></p>
                 </div>
@@ -254,7 +259,7 @@
                 <button class="button button--secondary" type="button" data-action="back">← Back</button>
                 <button class="button button--success" type="submit">Submit ✓</button>
               </div>
-            </section>
+            </fieldset>
           </form>
 
           <div class="submit-state hidden" id="submitState" aria-live="polite">
