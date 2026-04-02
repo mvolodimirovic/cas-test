@@ -2,10 +2,6 @@
 
 Responsive 3-step registration form built with semantic HTML5, local Tailwind CSS build, and vanilla JavaScript.
 
-## Live demo
-
-Add your deployment URL here after publishing to GitHub Pages.
-
 ## Project requirements covered
 
 - 3-step form with step indicator
